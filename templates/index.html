@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DICOM Viewer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <!-- File Tree Panel -->
+        <div class="file-panel">
+            <div class="file-panel-header">
+                <h2>Carica File</h2>
+                <button class="btn" id="folderPickerBtn" style="width: 100%; margin-bottom: 0.5rem;">Seleziona
+                    Cartella</button>
+                <input type="text" class="path-input" id="pathInput" placeholder="Percorso selezionato..." readonly>
+                <input type="file" id="folderInput" webkitdirectory directory style="display: none;">
+            </div>
+            <div class="file-tree" id="fileTree"></div>
+        </div>
+
+        <div class="resizer" id="dragMe"></div>
+
+        <!-- Viewer Panel -->
+        <div class="viewer-panel">
+            <div class="viewer-header">
+                <h1>DICOM Viewer</h1>
+                <div id="loadingIndicator" style="display: none;" class="loading">
+                    <div class="spinner"></div>
+                    <span>Caricamento...</span>
+                </div>
+            </div>
+
+            <div class="viewer-content" id="viewerContent">
+                <div class="info"
+                    style="grid-column: 1 / -1; display: flex; align-items: center; justify-content: center;">
+                    Seleziona una cartella o un file DICOM per iniziare
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/viewer.js') }}"></script>
+</body>
+
+</html>
