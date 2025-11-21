@@ -1,9 +1,9 @@
-setuptools>=65.5.1
-wheel>=0.38.0
-Flask==3.0.0
-pydicom==2.4.4
+setuptools>=70.0.0
+wheel>=0.43.0
+Flask==3.0.3
+pydicom==3.0.1
 numpy==1.26.4
-Pillow==10.0.0
-python-dotenv==1.0.0
-scipy==1.11.4
-gunicorn==21.2.0
+Pillow==11.0.0
+python-dotenv==1.0.1
+scipy==1.14.1
+gunicorn==23.0.0

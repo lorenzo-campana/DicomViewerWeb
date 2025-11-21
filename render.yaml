@@ -1,8 +1,11 @@
 services:
   - type: web
     name: dicom-viewer-web
-    env: python
-    buildCommand: pip install --upgrade pip setuptools wheel && pip install -r requirements.txt
+    runtime: python
+    buildCommand: |
+      python --version
+      pip install --upgrade pip setuptools wheel
+      pip install --only-binary=:all: -r requirements.txt || pip install -r requirements.txt
     startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --timeout 120 --workers 2
     envVars:
       - key: PYTHON_VERSION
